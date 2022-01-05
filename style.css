@@ -1,0 +1,165 @@
+:root {
+  font-size: 0.625rem;
+  --bg-color: rgb(10, 10, 10);
+  --primary-color: white;
+  --forest: rgb(86, 123, 228);
+  --hike: rgb(167, 110, 231);
+  --fashion: rgb(255, 139, 93);
+  --desc: rgb(179, 175, 175);
+}
+*,
+*::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+.nav-header {
+  width: 80%;
+  margin: 0 auto;
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: var(--bg-color);
+}
+.logo {
+  color: var(--primary-color);
+  font-family: "Abril Fatface", cursive;
+}
+.burger {
+  cursor: pointer;
+}
+.line1,
+.line2 {
+  width: 4.2rem;
+  height: 0.4rem;
+  background-color: var(--primary-color);
+  margin: 0.8rem;
+  pointer-events: none;
+}
+main {
+  width: 80%;
+  margin: 0 auto;
+}
+.slide {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  min-height: 100vh;
+}
+.hero-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 40rem;
+  position: relative;
+  gap: 3.5rem;
+}
+.hero-img {
+  flex: 1;
+  position: relative;
+  flex-basis: 40rem;
+}
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.title {
+  font-size: clamp(4rem, 3vw, 5rem);
+  line-height: 1.2;
+}
+.fashion-span {
+  color: var(--fashion);
+}
+.hike-span {
+  color: var(--hike);
+}
+.forest-span {
+  color: var(--forest);
+}
+.hero-description {
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  color: var(--desc);
+}
+.explore {
+  text-decoration: none;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+  align-self: flex-start;
+  padding: 1.5rem 2.5rem;
+}
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5rem;
+  padding: 0 4rem;
+  clip-path: circle(50px at 100% -10%);
+  -webkit-clip-path: circle(50px at 100% -10%);
+}
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  flex-basis: 45rem;
+  gap: 5rem;
+}
+.nav-link {
+  color: var(--bg-color);
+  text-decoration: none;
+  font-size: 5rem;
+  padding: 1rem 2.5rem;
+  transition: all 0.15s ease-in-out;
+}
+.nav-link:hover {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+}
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  flex-basis: 45rem;
+}
+.contact-title {
+  font-size: 5rem;
+}
+.contact-description {
+  font-size: 2rem;
+}
+.reveal-text,
+.reveal-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color);
+}
