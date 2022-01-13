@@ -21,8 +21,8 @@ body {
   background-color: var(--bg-color);
   color: var(--primary-color);
   font-family: "Montserrat", sans-serif;
-  font-size: 1.6rem;
   line-height: 1.6;
+  font-size: 1.6rem;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -34,11 +34,8 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  background-color: var(--bg-color);
+  position: relative;
+  z-index: 2;
 }
 .logo {
   color: var(--primary-color);
@@ -65,6 +62,7 @@ main {
   align-items: center;
   gap: 5rem;
   min-height: 100vh;
+  background: var(--bg-color);
 }
 .hero-body {
   flex: 1;
@@ -92,6 +90,29 @@ img {
   font-size: clamp(4rem, 4.5vw, 5rem);
   line-height: 1.2;
   font-family: "Abril Fatface", cursive;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 1.3rem;
+}
+.title-swipe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: darken;
+  pointer-events: none;
+  transform: translateY(100%);
+  transition: all 0.5s ease-in-out;
+}
+.t-swipe1 {
+  background-color: var(--forest);
+}
+.t-swipe2 {
+  background-color: var(--hike);
+}
+.t-swipe3 {
+  background-color: var(--fashion);
 }
 .fashion-span {
   color: var(--fashion);
@@ -122,7 +143,7 @@ img {
   height: 100%;
   background-color: var(--primary-color);
   color: var(--bg-color);
-  z-index: 2;
+  /* z-index: 2; */
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -164,10 +185,10 @@ img {
 .reveal-text,
 .reveal-image {
   position: absolute;
-  top: 0;
+  top: -15%;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 150%;
   background-color: var(--bg-color);
 }
 
@@ -176,4 +197,30 @@ img {
   height: 4.5rem;
   border: 2px solid var(--primary-color);
   border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+  transition-property: background-color, transform;
+  transform-origin: 75% 75%;
+  display: grid;
+  place-items: center;
+}
+.cursor.nav-active {
+  background-color: rgb(61, 161, 243);
+  transform: scale(3);
+}
+.cursor.explore-active {
+  background-color: rgb(255, 255, 255);
+  transform: scale(3);
+}
+.cursor span {
+  color: black;
+  font-size: 1rem;
+}
+.scrollmagic-pin-spacer {
+  position: static !important;
+}
+body.hide {
+  overflow: hidden;
 }
