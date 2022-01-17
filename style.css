@@ -25,6 +25,10 @@ body {
   font-size: 1.6rem;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  position: relative;
+}
+main {
+  position: absolute;
 }
 .nav-header {
   width: 80%;
@@ -53,7 +57,7 @@ body {
   margin: 0.8rem;
   pointer-events: none;
 }
-main {
+.container {
   width: 80%;
   margin: 0 auto;
 }
@@ -87,7 +91,7 @@ img {
   object-fit: cover;
 }
 .title {
-  font-size: clamp(4rem, 4.5vw, 5rem);
+  font-size: clamp(3rem, 4.5vw, 5rem);
   line-height: 1.2;
   font-family: "Abril Fatface", cursive;
   position: relative;
@@ -143,7 +147,6 @@ img {
   height: 100%;
   background-color: var(--primary-color);
   color: var(--bg-color);
-  /* z-index: 2; */
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -162,7 +165,7 @@ img {
 .nav-link {
   color: var(--bg-color);
   text-decoration: none;
-  font-size: 5rem;
+  font-size: clamp(3rem, 4vw + 1rem, 5rem);
   padding: 1rem 2.5rem;
   transition: all 0.15s ease-in-out;
 }
@@ -177,7 +180,7 @@ img {
   flex-basis: 45rem;
 }
 .contact-title {
-  font-size: 5rem;
+  font-size: clamp(3rem, 4vw + 1rem, 5rem);
 }
 .contact-description {
   font-size: 2rem;
@@ -223,4 +226,118 @@ img {
 }
 body.hide {
   overflow: hidden;
+}
+
+/* fashion page */
+.fashion1,
+.fashion2,
+.fashion3 {
+  min-height: 90vh;
+  margin-top: 3rem;
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.fashion-title {
+  font-size: clamp(5rem, 6vw, 10rem);
+}
+.fashion1 .fashion-title,
+.fashion1 .fashion-nr {
+  color: var(--fashion);
+}
+.fashion2 .fashion-title,
+.fashion2 .fashion-nr {
+  color: var(--forest);
+}
+.fashion3 .fashion-title,
+.fashion3 .fashion-nr {
+  color: var(--hike);
+}
+.fashion-text {
+  flex-basis: 30rem;
+  flex: 1;
+}
+.fashion-img {
+  height: 70vh;
+}
+.fashion-text p {
+  font-size: clamp(1.6rem, 2vw, 2.5rem);
+  color: rgb(189, 185, 185);
+}
+.fashion-nr {
+  font-size: 20rem;
+  position: absolute;
+  left: 50%;
+  bottom: 8%;
+  opacity: 0.3;
+}
+.swipe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+}
+.swipe1 {
+  background-color: var(--fashion);
+  z-index: 5;
+}
+.swipe2 {
+  background-color: var(--hike);
+  z-index: 4;
+}
+.swipe3 {
+  background-color: var(--forest);
+  z-index: 3;
+}
+@media (max-width: 60rem) {
+  .slide {
+    flex-direction: column;
+    padding: 4rem 0;
+    gap: 3rem;
+  }
+  .fashion1,
+  .fashion2,
+  .fashion3 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .fashion-img {
+    flex-basis: 40rem;
+    height: 50vh;
+  }
+  .fashion-text {
+    flex: 0;
+    flex-basis: 20rem;
+  }
+  .fashion-nr {
+    left: 50%;
+    bottom: 8%;
+  }
+  .nav-bar {
+    flex-direction: column;
+    justify-content: center;
+    padding: 5em;
+  }
+  .contact-title {
+    text-align: center;
+  }
+  .hero-body {
+    gap: 2rem;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+  .hero-img {
+    flex-basis: 25rem;
+  }
+  .nav-list {
+    margin-top: 3rem;
+  }
+  .cursor.explore-active,
+  .cursor.nav-active {
+    transform: scale(2.4);
+  }
 }
